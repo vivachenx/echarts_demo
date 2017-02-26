@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
+ 
+ 
+
+
+
+
+
+<script type="text/javascript">
+ var ctx = "/ths-report";
+</script>
+
+<LINK rel="stylesheet" type=text/css href="/ths-report/report/common/jquery/superTables/superTables.css">
+<LINK rel="stylesheet" type=text/css href="/ths-report/report/common/theme/lightblue/css/report_button.css">
+<LINK rel="stylesheet" type=text/css href="/ths-report/report/common/theme/lightblue/css/report_style.css">
+<link rel="stylesheet" type="text/css" href="/ths-report/report/common/jquery/artDialog/blue.css" />
+<script type="text/javascript" src="/ths-report/report/common/jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/jquery/jquery.plugIn.set.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/jquery/superTables.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/jquery/superTables/jquery.superTable.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/jquery/artDialog/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/jquery/table.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/jquery/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/customjs/report_javascript.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/customjs/report_javascript_designer.js"></script>
+
+<title>空气质量日报</title>
+<script>
+
+var winWidth=0;
+var winHeight=0;
+
+$(function() {
+	initReport()
+	setsupertable(0,0);
+}); 
+
+
+</script>
+</head>
+
+<body >
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/echarts.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/theme/shine.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/theme/blue.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/theme/dark.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/theme/gray.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/theme/green.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/theme/red.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/theme/helianthus.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/theme/macarons2.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/theme/mint.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/theme/roma.js"></script>
+<script type="text/javascript" src="/ths-report/report/common/echarts/build/dist/theme/sakura.js"></script>
+
+<div class="report_body">
+<form name="mainForm" method="post"  action="" id="mainForm" target="">
+<input type="hidden" name="page.pageNo" id="pageNo" value="1"/>
+<input type="hidden" name="page.orderBy" id="orderBy" value=""/> 
+<input type="hidden" name="page.order" id="order" value="" />
+<input type="hidden" name="orderby" id="orderby" value=""/>
+<input type="hidden" name="ordertype" id="ordertype" value=""/>
+<input  type="hidden" name="xmlname"     value="1462259560614"/> 
+<input  type="hidden" id="queryflag" name="queryflag"   value=""/> 
+<input  type="hidden" name="gisDataJson"  id="gisDataJson"   value='[{"GRADE":"一级","ROWNUM":"1","ID":"E4799C2A248543D8988AAEE13D4D5D2B","AQI":"43","CITY":"北京市","STATUS":"优","MAIN_POLLUTANT":"","CITYCODE":"110000","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"2","ID":"22534CE17B77414EB62546737E0BC768","AQI":"83","CITY":"天津市","STATUS":"良","MAIN_POLLUTANT":"NO2","CITYCODE":"120000","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"3","ID":"6B63C879E1104124AC796D84E777F0E7","AQI":"67","CITY":"石家庄市","STATUS":"良","MAIN_POLLUTANT":"PM10","CITYCODE":"130100","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"4","ID":"3EE1C03DC7DC4127A23434FB00238FEA","AQI":"68","CITY":"唐山市","STATUS":"良","MAIN_POLLUTANT":"NO2","CITYCODE":"130200","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"5","ID":"B2D223602CD840D98F14F3D2DE9DCA20","AQI":"58","CITY":"秦皇岛市","STATUS":"良","MAIN_POLLUTANT":"NO2","CITYCODE":"130300","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"6","ID":"BEE8BB15D12D4ABFB34920064B5E896D","AQI":"83","CITY":"邯郸市","STATUS":"良","MAIN_POLLUTANT":"NO2","CITYCODE":"130400","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"7","ID":"050AEC8AA3394E8BA655E25F45036A92","AQI":"63","CITY":"邢台市","STATUS":"良","MAIN_POLLUTANT":"NO2","CITYCODE":"130500","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"8","ID":"B55350887B094172A97ABF1D72EBBDB7","AQI":"70","CITY":"保定市","STATUS":"良","MAIN_POLLUTANT":"NO2","CITYCODE":"130600","OPER_DATE":"2017-02-25"},{"GRADE":"一级","ROWNUM":"9","ID":"60E45273AEB14C33942C4C7A7BF1CE34","AQI":"47","CITY":"承德市","STATUS":"优","MAIN_POLLUTANT":"","CITYCODE":"130800","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"10","ID":"FF1B0A40312E45C38CC140517BF735A3","AQI":"87","CITY":"沧州市","STATUS":"良","MAIN_POLLUTANT":"NO2","CITYCODE":"130900","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"11","ID":"A2E4DE3863554569A149FFAEA0900114","AQI":"62","CITY":"廊坊市","STATUS":"良","MAIN_POLLUTANT":"NO2","CITYCODE":"131000","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"12","ID":"682F8A5F2331423CA9CD61A42A72465E","AQI":"77","CITY":"衡水市","STATUS":"良","MAIN_POLLUTANT":"PM2.5","CITYCODE":"131100","OPER_DATE":"2017-02-25"},{"GRADE":"一级","ROWNUM":"13","ID":"06910320F908490A92E18399AA311104","AQI":"49","CITY":"张家口市","STATUS":"优","MAIN_POLLUTANT":"","CITYCODE":"131200","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"14","ID":"92710EF00354490C8C5F506C8BB334BA","AQI":"70","CITY":"太原市","STATUS":"良","MAIN_POLLUTANT":"PM10","CITYCODE":"140100","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"15","ID":"F8187EE452C34C21B3712B9A16DD0FFD","AQI":"69","CITY":"大同市","STATUS":"良","MAIN_POLLUTANT":"SO2","CITYCODE":"140200","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"16","ID":"E2E9BF8BF9B04E0DB2771901E9B03C3F","AQI":"58","CITY":"阳泉市","STATUS":"良","MAIN_POLLUTANT":"NO2","CITYCODE":"140300","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"17","ID":"648DE10662F7408688A2F424D84D4C2B","AQI":"84","CITY":"长治市","STATUS":"良","MAIN_POLLUTANT":"PM2.5","CITYCODE":"140400","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"18","ID":"ABAA9793F1334AEAB45FBE17DCB28829","AQI":"73","CITY":"晋城市","STATUS":"良","MAIN_POLLUTANT":"PM10","CITYCODE":"140500","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"19","ID":"08A7A313ABE0458B993A679392F81FF3","AQI":"76","CITY":"朔州市","STATUS":"良","MAIN_POLLUTANT":"PM10","CITYCODE":"140600","OPER_DATE":"2017-02-25"},{"GRADE":"三级","ROWNUM":"20","ID":"FD67765AB8F145239CBD39EF8D2A4CA5","AQI":"103","CITY":"晋中市","STATUS":"轻度污染","MAIN_POLLUTANT":"SO2","CITYCODE":"140700","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"21","ID":"74E0FFAF27AB4789B65DD019323E6703","AQI":"95","CITY":"运城市","STATUS":"良","MAIN_POLLUTANT":"PM2.5","CITYCODE":"140800","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"22","ID":"8DB54EC7520348DD8265609A5ADD0792","AQI":"70","CITY":"忻州市","STATUS":"良","MAIN_POLLUTANT":"PM10","CITYCODE":"140900","OPER_DATE":"2017-02-25"},{"GRADE":"三级","ROWNUM":"23","ID":"C5ECF130B97F487496418A76426274F3","AQI":"102","CITY":"临汾市","STATUS":"轻度污染","MAIN_POLLUTANT":"PM2.5","CITYCODE":"141000","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"24","ID":"9CAA24E4417D4BC7BAD2F051B1FBA67A","AQI":"94","CITY":"吕梁市","STATUS":"良","MAIN_POLLUTANT":"PM2.5","CITYCODE":"141100","OPER_DATE":"2017-02-25"},{"GRADE":"三级","ROWNUM":"25","ID":"AF75098AC19C4BBB916037A4F7B9757D","AQI":"137","CITY":"呼和浩特市","STATUS":"轻度污染","MAIN_POLLUTANT":"PM2.5","CITYCODE":"150100","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"26","ID":"30B50D047068469887DBAFBE604F0518","AQI":"80","CITY":"包头市","STATUS":"良","MAIN_POLLUTANT":"PM2.5","CITYCODE":"150200","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"27","ID":"8F16FC4DCFBD40A7A7004D01EDD311E1","AQI":"93","CITY":"乌海市","STATUS":"良","MAIN_POLLUTANT":"PM2.5","CITYCODE":"150300","OPER_DATE":"2017-02-25"},{"GRADE":"一级","ROWNUM":"28","ID":"260467D30D6049768D63F39AEFB3CF26","AQI":"41","CITY":"赤峰市","STATUS":"优","MAIN_POLLUTANT":"","CITYCODE":"150400","OPER_DATE":"2017-02-25"},{"GRADE":"一级","ROWNUM":"29","ID":"74AFB4A2F0844F538F259CB321EED57E","AQI":"41","CITY":"通辽市","STATUS":"优","MAIN_POLLUTANT":"","CITYCODE":"150500","OPER_DATE":"2017-02-25"},{"GRADE":"二级","ROWNUM":"30","ID":"7587066510BF410BAA045561D031CF84","AQI":"51","CITY":"鄂尔多斯市","STATUS":"良","MAIN_POLLUTANT":"臭氧8小时","CITYCODE":"150600","OPER_DATE":"2017-02-25"}]'/> 
+<input  type="hidden" name="isdesignpatterns"  id="isdesignpatterns"   value="false"/> 
+
+<div class="report_toolbar" id="toolbarhtml">
+	 <table class="report_toolbar_table" ><thead><tr class="report_toolbar_table_firstrow" style="height:0px" ><td width="12.5%"></td><td width="12.5%"></td><td width="12.5%"></td><td width="12.5%"></td><td width="12.5%"></td><td width="12.5%"></td><td width="12.5%"></td><td width="12.5%"></td></tr></thead><tbody><tr><td><span class="report_span">城市</span></td><td><input type="text" name="CITY"  value="" class="report_toolbar_input"/></span></td><td><span class="report_span">开始时间</span></td><td><input type="text" name="V_DATE" value="2017-02-25" class="Wdate" style="cursor:pointer;" readonly="readonly" onclick="WdatePicker({ el: this.id, dateFmt: 'yyyy-MM-dd', skin: 'whyGreen'})"/></td><td><span class="report_span">截止时间</span></td><td><input type="text" name="E_DATE" value="2017-02-25" class="Wdate" style="cursor:pointer;" readonly="readonly" onclick="WdatePicker({ el: this.id, dateFmt: 'yyyy-MM-dd', skin: 'whyGreen'})"/></td><td colspan="2"> <input type="button"  class="button toolbarbutton search" name="operation1" onclick="submitForm(1)" value="查询"/></td></tr></tbody></table>  
+</div>
+
+<div style="width:100%">
+
+ 
+
+<div class="report_main"  id="tablehtml">
+		<table class="report-table"  style="table-layout:fixed;"  id=GridView1 border=1 rules=all cellSpacing=0>
+<tr class="" style=""><th rowid="0" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; background-color:#EDF2FC; width:5%;WORD-WRAP: break-word;">序号</th>
+<th rowid="0" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center; background-color:#EDF2FC;WORD-WRAP: break-word; display:none ">ID</th>
+<th rowid="0" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center; background-color:#EDF2FC;WORD-WRAP: break-word;">城市</th>
+<th rowid="0" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center; background-color:#EDF2FC;WORD-WRAP: break-word;">AQI指数</th>
+<th rowid="0" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center; background-color:#EDF2FC;WORD-WRAP: break-word;">首要污染物</th>
+<th rowid="0" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center; background-color:#EDF2FC;WORD-WRAP: break-word; display:none ">GRADE  </th>
+<th rowid="0" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center; background-color:#EDF2FC;WORD-WRAP: break-word;">日期</th>
+<th rowid="0" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center; background-color:#EDF2FC;WORD-WRAP: break-word; display:none ">CITYCODE</th>
+<th rowid="0" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center; background-color:#EDF2FC;WORD-WRAP: break-word;">空气质量级别</th>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="1" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#0CE115;'>1</span></td>
+<td rowid="1" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">E4799C2A248543D8988AAEE13D4D5D2B</td>
+<td rowid="1" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>北京市</span></td>
+<td rowid="1" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>43</span></td>
+<td rowid="1" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'></span></td>
+<td rowid="1" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">一级</td>
+<td rowid="1" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>2017-02-25</span></td>
+<td rowid="1" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">110000</td>
+<td rowid="1" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>优</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="2" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2</span></td>
+<td rowid="2" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">22534CE17B77414EB62546737E0BC768</td>
+<td rowid="2" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>天津市</span></td>
+<td rowid="2" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>83</span></td>
+<td rowid="2" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>NO2</span></td>
+<td rowid="2" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="2" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="2" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">120000</td>
+<td rowid="2" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="3" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>3</span></td>
+<td rowid="3" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">6B63C879E1104124AC796D84E777F0E7</td>
+<td rowid="3" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>石家庄市</span></td>
+<td rowid="3" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>67</span></td>
+<td rowid="3" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>PM10</span></td>
+<td rowid="3" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="3" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="3" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">130100</td>
+<td rowid="3" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="4" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>4</span></td>
+<td rowid="4" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">3EE1C03DC7DC4127A23434FB00238FEA</td>
+<td rowid="4" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>唐山市</span></td>
+<td rowid="4" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>68</span></td>
+<td rowid="4" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>NO2</span></td>
+<td rowid="4" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="4" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="4" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">130200</td>
+<td rowid="4" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="5" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>5</span></td>
+<td rowid="5" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">B2D223602CD840D98F14F3D2DE9DCA20</td>
+<td rowid="5" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>秦皇岛市</span></td>
+<td rowid="5" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>58</span></td>
+<td rowid="5" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>NO2</span></td>
+<td rowid="5" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="5" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="5" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">130300</td>
+<td rowid="5" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="6" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>6</span></td>
+<td rowid="6" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">BEE8BB15D12D4ABFB34920064B5E896D</td>
+<td rowid="6" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>邯郸市</span></td>
+<td rowid="6" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>83</span></td>
+<td rowid="6" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>NO2</span></td>
+<td rowid="6" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="6" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="6" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">130400</td>
+<td rowid="6" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="7" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>7</span></td>
+<td rowid="7" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">050AEC8AA3394E8BA655E25F45036A92</td>
+<td rowid="7" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>邢台市</span></td>
+<td rowid="7" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>63</span></td>
+<td rowid="7" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>NO2</span></td>
+<td rowid="7" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="7" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="7" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">130500</td>
+<td rowid="7" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="8" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>8</span></td>
+<td rowid="8" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">B55350887B094172A97ABF1D72EBBDB7</td>
+<td rowid="8" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>保定市</span></td>
+<td rowid="8" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>70</span></td>
+<td rowid="8" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>NO2</span></td>
+<td rowid="8" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="8" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="8" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">130600</td>
+<td rowid="8" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="9" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#0CE115;'>9</span></td>
+<td rowid="9" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">60E45273AEB14C33942C4C7A7BF1CE34</td>
+<td rowid="9" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>承德市</span></td>
+<td rowid="9" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>47</span></td>
+<td rowid="9" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'></span></td>
+<td rowid="9" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">一级</td>
+<td rowid="9" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>2017-02-25</span></td>
+<td rowid="9" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">130800</td>
+<td rowid="9" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>优</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="10" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>10</span></td>
+<td rowid="10" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">FF1B0A40312E45C38CC140517BF735A3</td>
+<td rowid="10" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>沧州市</span></td>
+<td rowid="10" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>87</span></td>
+<td rowid="10" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>NO2</span></td>
+<td rowid="10" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="10" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="10" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">130900</td>
+<td rowid="10" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="11" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>11</span></td>
+<td rowid="11" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">A2E4DE3863554569A149FFAEA0900114</td>
+<td rowid="11" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>廊坊市</span></td>
+<td rowid="11" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>62</span></td>
+<td rowid="11" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>NO2</span></td>
+<td rowid="11" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="11" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="11" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">131000</td>
+<td rowid="11" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="12" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>12</span></td>
+<td rowid="12" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">682F8A5F2331423CA9CD61A42A72465E</td>
+<td rowid="12" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>衡水市</span></td>
+<td rowid="12" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>77</span></td>
+<td rowid="12" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>PM2.5</span></td>
+<td rowid="12" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="12" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="12" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">131100</td>
+<td rowid="12" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="13" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#0CE115;'>13</span></td>
+<td rowid="13" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">06910320F908490A92E18399AA311104</td>
+<td rowid="13" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>张家口市</span></td>
+<td rowid="13" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>49</span></td>
+<td rowid="13" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'></span></td>
+<td rowid="13" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">一级</td>
+<td rowid="13" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>2017-02-25</span></td>
+<td rowid="13" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">131200</td>
+<td rowid="13" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>优</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="14" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>14</span></td>
+<td rowid="14" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">92710EF00354490C8C5F506C8BB334BA</td>
+<td rowid="14" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>太原市</span></td>
+<td rowid="14" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>70</span></td>
+<td rowid="14" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>PM10</span></td>
+<td rowid="14" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="14" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="14" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">140100</td>
+<td rowid="14" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="15" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>15</span></td>
+<td rowid="15" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">F8187EE452C34C21B3712B9A16DD0FFD</td>
+<td rowid="15" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>大同市</span></td>
+<td rowid="15" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>69</span></td>
+<td rowid="15" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>SO2</span></td>
+<td rowid="15" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="15" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="15" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">140200</td>
+<td rowid="15" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="16" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>16</span></td>
+<td rowid="16" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">E2E9BF8BF9B04E0DB2771901E9B03C3F</td>
+<td rowid="16" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>阳泉市</span></td>
+<td rowid="16" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>58</span></td>
+<td rowid="16" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>NO2</span></td>
+<td rowid="16" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="16" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="16" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">140300</td>
+<td rowid="16" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="17" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>17</span></td>
+<td rowid="17" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">648DE10662F7408688A2F424D84D4C2B</td>
+<td rowid="17" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>长治市</span></td>
+<td rowid="17" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>84</span></td>
+<td rowid="17" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>PM2.5</span></td>
+<td rowid="17" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="17" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="17" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">140400</td>
+<td rowid="17" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="18" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>18</span></td>
+<td rowid="18" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">ABAA9793F1334AEAB45FBE17DCB28829</td>
+<td rowid="18" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>晋城市</span></td>
+<td rowid="18" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>73</span></td>
+<td rowid="18" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>PM10</span></td>
+<td rowid="18" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="18" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="18" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">140500</td>
+<td rowid="18" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="19" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>19</span></td>
+<td rowid="19" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">08A7A313ABE0458B993A679392F81FF3</td>
+<td rowid="19" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>朔州市</span></td>
+<td rowid="19" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>76</span></td>
+<td rowid="19" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>PM10</span></td>
+<td rowid="19" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="19" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="19" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">140600</td>
+<td rowid="19" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="20" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>20</span></td>
+<td rowid="20" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">FD67765AB8F145239CBD39EF8D2A4CA5</td>
+<td rowid="20" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>晋中市</span></td>
+<td rowid="20" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>103</span></td>
+<td rowid="20" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>SO2</span></td>
+<td rowid="20" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">三级</td>
+<td rowid="20" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>2017-02-25</span></td>
+<td rowid="20" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">140700</td>
+<td rowid="20" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>轻度污染</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="21" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>21</span></td>
+<td rowid="21" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">74E0FFAF27AB4789B65DD019323E6703</td>
+<td rowid="21" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>运城市</span></td>
+<td rowid="21" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>95</span></td>
+<td rowid="21" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>PM2.5</span></td>
+<td rowid="21" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="21" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="21" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">140800</td>
+<td rowid="21" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="22" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>22</span></td>
+<td rowid="22" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">8DB54EC7520348DD8265609A5ADD0792</td>
+<td rowid="22" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>忻州市</span></td>
+<td rowid="22" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>70</span></td>
+<td rowid="22" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>PM10</span></td>
+<td rowid="22" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="22" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="22" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">140900</td>
+<td rowid="22" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="23" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>23</span></td>
+<td rowid="23" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">C5ECF130B97F487496418A76426274F3</td>
+<td rowid="23" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>临汾市</span></td>
+<td rowid="23" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>102</span></td>
+<td rowid="23" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>PM2.5</span></td>
+<td rowid="23" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">三级</td>
+<td rowid="23" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>2017-02-25</span></td>
+<td rowid="23" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">141000</td>
+<td rowid="23" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>轻度污染</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="24" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>24</span></td>
+<td rowid="24" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">9CAA24E4417D4BC7BAD2F051B1FBA67A</td>
+<td rowid="24" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>吕梁市</span></td>
+<td rowid="24" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>94</span></td>
+<td rowid="24" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>PM2.5</span></td>
+<td rowid="24" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="24" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="24" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">141100</td>
+<td rowid="24" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="25" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>25</span></td>
+<td rowid="25" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">AF75098AC19C4BBB916037A4F7B9757D</td>
+<td rowid="25" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>呼和浩特市</span></td>
+<td rowid="25" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>137</span></td>
+<td rowid="25" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>PM2.5</span></td>
+<td rowid="25" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">三级</td>
+<td rowid="25" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>2017-02-25</span></td>
+<td rowid="25" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">150100</td>
+<td rowid="25" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FF7E00;'>轻度污染</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="26" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>26</span></td>
+<td rowid="26" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">30B50D047068469887DBAFBE604F0518</td>
+<td rowid="26" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>包头市</span></td>
+<td rowid="26" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>80</span></td>
+<td rowid="26" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>PM2.5</span></td>
+<td rowid="26" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="26" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="26" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">150200</td>
+<td rowid="26" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="27" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>27</span></td>
+<td rowid="27" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">8F16FC4DCFBD40A7A7004D01EDD311E1</td>
+<td rowid="27" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>乌海市</span></td>
+<td rowid="27" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>93</span></td>
+<td rowid="27" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>PM2.5</span></td>
+<td rowid="27" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="27" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="27" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">150300</td>
+<td rowid="27" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="28" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#0CE115;'>28</span></td>
+<td rowid="28" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">260467D30D6049768D63F39AEFB3CF26</td>
+<td rowid="28" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>赤峰市</span></td>
+<td rowid="28" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>41</span></td>
+<td rowid="28" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'></span></td>
+<td rowid="28" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">一级</td>
+<td rowid="28" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>2017-02-25</span></td>
+<td rowid="28" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">150400</td>
+<td rowid="28" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>优</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="29" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#0CE115;'>29</span></td>
+<td rowid="29" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">74AFB4A2F0844F538F259CB321EED57E</td>
+<td rowid="29" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>通辽市</span></td>
+<td rowid="29" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>41</span></td>
+<td rowid="29" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'></span></td>
+<td rowid="29" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">一级</td>
+<td rowid="29" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>2017-02-25</span></td>
+<td rowid="29" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">150500</td>
+<td rowid="29" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#0CE115;'>优</span></td>
+</tr>
+<tr class="" style="" onmouseover="this.style.backgroundColor='#FFFDD7'" onmouseout="this.style.backgroundColor=''"><td rowid="30" mergecol="-1" mergerow="-1" colid="0"  rowspan="1"  colspan="1" style="text-align:center; width:5%;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>30</span></td>
+<td rowid="30" mergecol="-1" mergerow="-1" colid="1"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">7587066510BF410BAA045561D031CF84</td>
+<td rowid="30" mergecol="-1" mergerow="-1" colid="2"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>鄂尔多斯市</span></td>
+<td rowid="30" mergecol="-1" mergerow="-1" colid="3"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>51</span></td>
+<td rowid="30" mergecol="-1" mergerow="-1" colid="4"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>臭氧8小时</span></td>
+<td rowid="30" mergecol="-1" mergerow="-1" colid="5"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">二级</td>
+<td rowid="30" mergecol="-1" mergerow="-1" colid="6"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>2017-02-25</span></td>
+<td rowid="30" mergecol="-1" mergerow="-1" colid="7"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word; display:none ">150600</td>
+<td rowid="30" mergecol="-1" mergerow="-1" colid="8"  rowspan="1"  colspan="1" style="text-align:center;WORD-WRAP: break-word;"><span style='color:#FFD91C;'>良</span></td>
+</tr>
+</table>
+</div>
+
+ 
+
+
+<script language="javascript"> 
+	function clearNoNum(obj){
+	  //把非数字的都替换掉，除了数字
+	  obj.value = obj.value.replace(/[^\d]/g,"");
+
+ 	}
+ 	function yanzNum(obj){
+	 		var totalPages = 13;
+		  var validNum = (obj>=1&&obj<=totalPages);
+		  if(!validNum){
+		  	alert('当前页号无效!')
+	  		document.getElementById("num").value="1";
+	  		return false;
+	  };
+ 	}
+    function checkPageNo()
+    {
+        if(parseInt($("#pageNo").val())>0)
+            $("#pageNo").val("1");
+        
+    }
+    function ANP_keydown(e,btnId){
+    	var kcode;
+    	if(window.event){
+    		kcode=e.keyCode;
+    	}else if(e.which){
+    		kcode=e.which;
+    	}
+    	var validKey=(kcode==8||kcode==46||kcode==37||kcode==39||(kcode>=48&&kcode<=57)||(kcode>=96&&kcode<=105));
+    	if(!validKey){
+    		if(kcode==13) document.getElementById(btnId).click();
+    		if(e.preventDefault) e.preventDefault();
+    		else{event.returnValue=false};
+    	}
+    }
+    function gojumpPage(){
+    	var pagesum = 13;
+    	var inPageNo = $("#inPageNo").val()*1;
+    	if(isNaN(inPageNo)){
+    		$("pageNo").val('1');
+    	}else if(inPageNo>pagesum){
+    		jumpPage2(pagesum);
+    	}else if(inPageNo<1){
+    		jumpPage2(1);
+    	}else{
+    		jumpPage2(inPageNo);
+    	}
+    }
+    function jumpPage2(pageNo){
+    	$("#pageNo").val(pageNo);
+    	if($("#keys").val()=='请输入文件号、标题...'){
+    		$("#keys").val("");
+    	}
+    	submitForm(pageNo);
+    }
+    
+	function pagechange(){
+   		var page=$("#pagenum").val();
+   		if(null==page){
+   			return;
+   		}
+   		jumpPage2(1);
+   	}
+    
+	</script>
+<!--翻页样式-->
+
+	<div class="report_page">
+		&nbsp;&nbsp;总记录数&nbsp;：367&nbsp;条&nbsp;&nbsp;&nbsp;
+		当前页&nbsp;：1&nbsp;&nbsp;&nbsp;
+		总页数&nbsp;：13
+		
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+		
+		
+		
+		
+		
+			&nbsp;<span>首页</span>&nbsp;
+			&nbsp;<span>上一页</span>&nbsp;
+		
+		
+		
+		
+		
+		
+		
+		
+			
+			
+			
+				
+					
+				   	 &nbsp;<span>1</span>&nbsp;
+				   	
+					
+			    
+			
+				
+					
+					
+				     &nbsp;<a href="#" onclick="javascript:jumpPage2(2);"><u>2</u></a>&nbsp;
+				    
+			    
+			
+				
+					
+					
+				     &nbsp;<a href="#" onclick="javascript:jumpPage2(3);"><u>3</u></a>&nbsp;
+				    
+			    
+			
+				
+					
+					
+				     &nbsp;<a href="#" onclick="javascript:jumpPage2(4);"><u>4</u></a>&nbsp;
+				    
+			    
+			
+				
+					
+					
+				     &nbsp;<a href="#" onclick="javascript:jumpPage2(5);"><u>5</u></a>&nbsp;
+				    
+			    
+			
+				
+					
+					
+				     &nbsp;<a href="#" onclick="javascript:jumpPage2(6);"><u>6</u></a>&nbsp;
+				    
+			    
+			
+				
+					
+					
+				     &nbsp;<a href="#" onclick="javascript:jumpPage2(7);"><u>7</u></a>&nbsp;
+				    
+			    
+			
+				
+					
+					
+				     &nbsp;<a href="#" onclick="javascript:jumpPage2(8);"><u>8</u></a>&nbsp;
+				    
+			    
+			
+				
+					
+					
+				     &nbsp;<a href="#" onclick="javascript:jumpPage2(9);"><u>9</u></a>&nbsp;
+				    
+			    
+			
+				
+					
+					
+				     &nbsp;<a href="#" onclick="javascript:jumpPage2(10);"><u>10</u></a>&nbsp;
+				    
+			    
+			
+		
+		
+			 &nbsp;<a href="###" onclick="javascript:jumpPage2(2)">下一页</a>&nbsp;
+		     &nbsp;<a href="###" onclick="javascript:jumpPage2(13)">末页</a>&nbsp; 
+			
+		
+			
+		
+		
+		&nbsp;&nbsp;<input type="text" value="1" name="inPageNo"
+			id="inPageNo" onkeydown="ANP_keydown(event,'inPageNo');"
+			class="report_page_number" /> <input type="submit" name="pageNo_"
+			value="跳转" id="pageNo_" class="report_page_jump"
+			onclick="javascript:gojumpPage()" />
+			
+			
+		
+			
+	</div>
+
+
+	
+</div>
+<div style="width:100%">
+ 
+
+<div class="report_chart" id="echarthtml">
+<script>
+require.config({paths: {echarts: '/ths-report/report/common/echarts/build/dist'}})
+</script>
+  <script type="text/javascript">
+function showEcharts(){
+try{
+showEchart0();
+}catch(e){
+$('#echart_div0').removeClass('echart_div');$('#echart_div0').html("<span  style=' color:red; '>无数据展示</span>");
+}
+}
+</script>
+<div id="echart_div0" class="echart_div" style="height:350px;width: 100%;">
+</div>
+<script type="text/javascript">
+function showEchart0(){
+require(
+[
+'echarts',
+'echarts/chart/bar',
+ 'echarts/chart/line'
+],
+function (ec) {
+debugger;var myChart = ec.init(document.getElementById('echart_div0'));
+
+ myChart.setTheme('default');
+var commonOption=
+{theme:'default',grid:{x:50,x2:50,y:50,y2:80},title:{x:'center',y:'top'},legend:{show:true,orient:'horizontal',x:'center',y:'bottom'},xAxis_rotate:'-48',xAxis_label:true,xAxis_position:'down',xAxis_splitline:false,xAxis_interval:'',yAxis_max:'',yAxis_min:'',yAxis_splitline:true,yAxis_splitNumber:'',toolbox:{show:false,orient:'horizontal',x:'right',y:'top'}};
+myChart.setOption(commonOption);
+var option ={
+title : {text:'全国城市空气质量日报',subtext:''}
+,tooltip : {trigger:'axis',axisPointer:{type: 'none'}}
+,legend : {data:['AQI指数']}
+,toolbox: {show:false,orient:'horizontal',x:'right',y:'top',feature : {mark : {show: true},dataView : {show: false, readOnly: false},magicType : {show: true, type: ['line','bar','stack','tiled']},restore : {show: true},saveAsImage : {show: false},myTool:{show : false,title : '编辑', icon : '/ths-report/report/common/theme/lightblue/images/button/edittool.png',onclick : function (){modifed('1477374766068','/reportmanagerChart!jumppage.action?jumpurl=middle/chart/rpt_designer_middle_chart_line.jsp&xmlname=1462259560614','柱状图','550px','310px');}},myTool1:{show : false,title : '删除', icon : '/ths-report/report/common/theme/lightblue/images/button/tooldelete.png',onclick : function (){deleteAction('1477374766068','addRowNum')}}}}
+,calculable : true
+,xAxis:[{name:'',splitLine: {show: false},axisLabel:{show:true,rotate:-48,interval:'auto'}
+,type:'category',data:['北京市','天津市','石家庄市','唐山市','秦皇岛市','邯郸市','邢台市','保定市','承德市','沧州市','廊坊市','衡水市','张家口市','太原市','大同市','阳泉市','长治市','晋城市','朔州市','晋中市','运城市','忻州市','临汾市','吕梁市','呼和浩特市','包头市','乌海市','赤峰市','通辽市','鄂尔多斯市']}]
+,yAxis:[{type:'value',splitLine: {show: true},name:'AQI指数'}]
+,series:[{name:'AQI指数',type:'bar'
+,itemStyle:{
+normal:{}
+}
+,markPoint:{
+data:[]
+},markLine:{
+data:[]
+}
+,data:['43','83','67','68','58','83','63','70','47','87','62','77','49','70','69','58','84','73','76','103','95','70','102','94','137','80','93','41','41','51']}]
+};
+myChart.setOption(option); 
+chartAdd(myChart);
+});
+
+}</script>
+  
+</div> 
+
+ 
+</div>
+</form>
+</div>
+<script>
+
+    	
+</script>
+<br/>
+<iframe id="exportiframe"  name="exportiframe" src="" style="display: none" >111</iframe>
+</body>
+</html>
